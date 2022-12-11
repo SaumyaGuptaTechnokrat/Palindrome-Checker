@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center{
+            display: block;
+            margin:auto;
+            padding: auto;
+        }
+        #centerP{
+            text-align: center;
+            color: teal;
+            text-decoration: underline 2px black;
+        }
+        #head1{
+            text-align: center;
+            color: yellow;
+            text-shadow: 2px 2px 4px red;
+        }
+        body{
+            background-image: url('https://www.educationworld.in/wp-content/uploads/2018/10/Palindrome.jpg');
+        }
+    </style>
+</head>
+<body >
+    <h1 id="centerP">PALINDROME CHECKER</h1>
+    <input class="center" type="text" id="pal"><br>
+    <button class="center" onclick="palindrome()">IS PALINDROME</button>
+    <br>
+    <h2 id="head1" class="center"></h2>
+    <script>
+        function palindrome(){
+            var data = document.getElementById('pal').value;
+            var rev='';
+            for(var i=0;i<data.length;i++){
+                rev = data.charAt(i)+rev; 
+            } 
+            if(rev==data){
+                    document.getElementById('head1').innerHTML='IT IS A PALINDROME';
+            }
+            else{
+                document.getElementById('head1').innerHTML='IT IS NOT A PALINDROME';
+            }
+        }
+    </script>
+</body>
+</html>
