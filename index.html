@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PalindromeChecker</title>
     <style>
         .center{
             display: block;
@@ -13,16 +13,23 @@
         }
         #centerP{
             text-align: center;
-            color: #FFD580;
             text-decoration: underline 2px;
+            font-size: 100px;
+
         }
         #head1{
             text-align: center;
             color: yellow;
-            text-shadow: 2px 2px 4px red;
+            text-shadow: 1px 3px 1px #ffaa00;
+        }
+        #centerB{
+            width: 150px;
+            height: 30px;
+            border-radius: 10px;
+            color: red;
         }
         #centerB:focus, #centerB:hover,#touchevents #newsletter__email-address-button:active {
-            background: #23afaf;
+            background: #fabf4b;
         }
         body{
             background-image: url('https://www.educationworld.in/wp-content/uploads/2018/10/Palindrome.jpg');
@@ -31,23 +38,94 @@
         }
         #centerCaption{
             text-align: center;
-            color: #FFD580;
-            text-decoration: underline 2px #FFD580;
+
+            text-decoration: underline 2px white;
         }
         #pal{
             background:transparent;
-            border:1px black solid;
+            width: 200px;
+            height: 45px;
+            border-radius: 10px;
+
+            font-weight: bolder;
+            font-size: 30px;
         }
+        #pal:hover{
+            border: 2px yellow double ;
+        }
+        #labe{
+            position: relative;
+            left:550px;
+            top: 35px;
+            font-size: 20px;
+        }
+        .ancor:link{
+            color: #04fa52;
+        }
+        
+        .ancor:visited{
+            color: #FFD580;
+        }
+        .ancor:active{
+            color: blue;
+        }
+        .pale-orange{
+            color: #eeeeee;
+        }
+        @media screen and (min-width:300px) and (max-width:500px){
+            body{
+                background-size: 500px 1000px;
+            }
+            #labe{
+                position: relative;
+                left:25px
+            }
+            #centerP{
+                font-size: 50px;
+            }
+        }
+        
+::placeholder {
+  color: #ded691;
+ /* Firefox */
+}
+::title{
+    color: red;
+}
+/*abbr[title], acronym[title] {
+color: #04fa52;
+}*/
+abbr[title]:hover::after {
+    color: red;
+    size: 10px;
+}
     </style>
 </head>
 <body >
-    <h1 id="centerP">PALINDROME CHECKER</h1>
-    <h2 id="centerCaption">Type a Palindrome String or Palindrome Number:</h2><br>
-    <input class="center" type="text" id="pal"><br>
-    <button id = "centerB" class="center" onclick="palindrome()">IS PALINDROME</button>
+    <h1 id="centerP" class="pale-orange"><abbr  style="text-decoration:none" title="A palindromic number (also known as a numeral palindrome or a numeric palindrome) is a number (such as 16461) that remains the same when its digits are reversed. 
+In other words, it has reflectional symmetry across a vertical axis.">
+        PALINDROME</abbr> CHECKER</h1>
+        
+        <a class="ancor" target="_blank" rel="noopener noreferrer" href="palindromeDef.html" >
+            <h2 class="pale-orange" style=" text-align: center;cursor: pointer;">
+            What is a Palindrome Number? Click It to know<p id="blink">&#8593;</p></h2>
+        </a>
+    <h3 id="centerCaption" class="pale-orange">Type a Palindrome String or Palindrome Number</h3><br>
+    <div id="divC">
+        
+    <label id="labe" class="pale-orange">Type Here:</label>
+
+    <abbr style="text-decoration:none " title="Palindrome String or Palindrome Number
+121 or madam">
+        <input class="center pale-orange"  type="text" id="pal" placeholder="Ex:-madam">
+    </abbr><br>
+    </div>
+    <button id = "centerB" class="center pale-orange" onclick="palindrome()" onmouseover="blink()">IS PALINDROME</button>
+
     <br>
     <h2 id="head1" class="center"></h2>
     <script>
+        
         function palindrome(){
             var data = document.getElementById('pal').value;
             var rev='';
@@ -59,8 +137,15 @@
             }
             else{
                 document.getElementById('head1').innerHTML='IT IS NOT A PALINDROME';
-            }
+            }    
         }
+            var blink = document.getElementById('blink');
+  
+        setInterval(function () {
+            blink.style.opacity = 
+            (blink.style.opacity == 0 ? 1 : 0);
+        }, 500);
+        
     </script>
 </body>
 </html>
