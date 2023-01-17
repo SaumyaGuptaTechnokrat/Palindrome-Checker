@@ -14,7 +14,7 @@
         #centerP{
             text-align: center;
             color: teal;
-            text-decoration: underline 2px black;
+            text-decoration: underline 2px #01F9C6;
         }
         #head1{
             text-align: center;
@@ -23,12 +23,19 @@
         }
         body{
             background-image: url('https://www.educationworld.in/wp-content/uploads/2018/10/Palindrome.jpg');
+            background-repeat:no-repeat;
+            background-size: 1600px 1200px;
+        }
+        #centerCaption{
+            text-align: center;
+            color: teal;
+            text-decoration: underline 2px #00F9C7;
         }
     </style>
 </head>
 <body >
     <h1 id="centerP">PALINDROME CHECKER</h1>
-    <h2>Type a Palindrome String or Palindrome Number:</h2><br>
+    <h2 id="centerCaption">Type a Palindrome String or Palindrome Number:</h2><br>
     <input class="center" type="text" id="pal"><br>
     <button class="center" onclick="palindrome()">IS PALINDROME</button>
     <br>
