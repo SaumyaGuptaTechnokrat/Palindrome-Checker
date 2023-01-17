@@ -21,6 +21,14 @@
             color: yellow;
             text-shadow: 2px 2px 4px red;
         }
+        #centerB:focus, #no-touchevents #centerB:focus,#touchevents #newsletter__email-address-button:active {
+            background: #23afaf;
+            
+            margin-block-start: 1.67em;
+            margin-block-end: 1.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
         body{
             background-image: url('https://www.educationworld.in/wp-content/uploads/2018/10/Palindrome.jpg');
             background-repeat:no-repeat;
@@ -31,13 +39,16 @@
             color: #FFD580;
             text-decoration: underline 2px #FFD580;
         }
+        .no-touchevents .newsletter__email-address-button:focus, .no-touchevents .newsletter__email-address-button:hover, .touchevents .newsletter__email-address-button:active {
+    background: #23afaf;
+}
     </style>
 </head>
 <body >
     <h1 id="centerP">PALINDROME CHECKER</h1>
     <h2 id="centerCaption">Type a Palindrome String or Palindrome Number:</h2><br>
     <input class="center" type="text" id="pal"><br>
-    <button class="center" onclick="palindrome()">IS PALINDROME</button>
+    <button id = "centerB" class="center" onclick="palindrome()">IS PALINDROME</button>
     <br>
     <h2 id="head1" class="center"></h2>
     <script>
